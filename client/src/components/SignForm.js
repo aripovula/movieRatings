@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Query, Mutation } from "react-apollo";
+import { withRouter } from 'react-router-dom';
 
 import { SIGNUP_USER, SIGNIN_USER } from "../queries/index";
 
@@ -23,6 +24,7 @@ export class SignForm extends Component {
             console.log(data);
             this.saveTokenToLocalSrorage(data.data.signupUser.token);
             this.clearState();
+            this.props.history.push('/');
         });
 	};
 
@@ -32,6 +34,7 @@ export class SignForm extends Component {
             console.log(data);
             this.saveTokenToLocalSrorage(data.data.signinUser.token);
             this.clearState();
+            this.props.history.push('/');
         });
     };
     
@@ -137,4 +140,4 @@ export class SignForm extends Component {
 	}
 }
 
-export default SignForm;
+export default withRouter(SignForm);

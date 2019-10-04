@@ -382,6 +382,11 @@ input[type=text], input[type=number], input[type=date], input[type=password] {
   font-size: 12px
 }
 
+li.navb{
+  display: inline;
+  margin: 10px;
+}
+
 a.addn {
   color: white;
   font-size: 14px;
