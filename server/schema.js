@@ -3,7 +3,9 @@ exports.typeDefs = `
 
     type Query {
         getCurrentUser: User
+        getRating(_id: ID!): Rating
         getAllRatings: [Rating]
+        searchRatings(searchTerm: String): [Rating]
     }
 
     type Mutation {

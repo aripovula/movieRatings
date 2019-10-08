@@ -31,4 +31,6 @@ const RatingSchema = new Schema({
     }
 });
 
+RatingSchema.index({'$**': 'text'});
+
 module.exports = mongoose.model('Rating', RatingSchema);
